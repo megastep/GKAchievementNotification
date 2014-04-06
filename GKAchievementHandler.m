@@ -103,7 +103,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 - (void)notifyAchievementTitle:(NSString *)title andMessage:(NSString *)message
 {
-    [self notifyAchievementTitle:title message:message andImage:[UIImage imageNamed:@"gk-icon.png"]];
+    [self notifyAchievementTitle:title message:message andImage:[UIImage imageNamed:@"gk-icon"]];
 }
 
 - (void)notifyAchievementTitle:(NSString *)title message:(NSString *)message andImage:(UIImage *)image;
