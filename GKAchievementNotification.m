@@ -73,6 +73,7 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationUnknown:
             self.transform = CGAffineTransformIdentity;
             break;
         case UIInterfaceOrientationPortraitUpsideDown:
@@ -244,6 +245,7 @@
  
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationUnknown:
             return CGRectMake(frame.size.width * (1.0f - _barWidthRatio)/2.0f,
                               -kGKAchievementFrameHeight-1.0f, 
                               frame.size.width * _barWidthRatio, kGKAchievementFrameHeight);
@@ -268,6 +270,7 @@
     CGRect frame = [self startFrame];
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+        case UIInterfaceOrientationUnknown:
             frame.origin.y += kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.height;
             break;
             
