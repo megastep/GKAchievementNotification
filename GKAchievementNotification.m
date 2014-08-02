@@ -73,7 +73,9 @@
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+#ifdef __IPHONE_8_0
         case UIInterfaceOrientationUnknown:
+#endif
             self.transform = CGAffineTransformIdentity;
             break;
         case UIInterfaceOrientationPortraitUpsideDown:
@@ -245,7 +247,9 @@
  
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+#ifdef __IPHONE_8_0
         case UIInterfaceOrientationUnknown:
+#endif
             return CGRectMake(frame.size.width * (1.0f - _barWidthRatio)/2.0f,
                               -kGKAchievementFrameHeight-1.0f, 
                               frame.size.width * _barWidthRatio, kGKAchievementFrameHeight);
@@ -270,7 +274,9 @@
     CGRect frame = [self startFrame];
     switch (orientation) {
         case UIInterfaceOrientationPortrait:
+#ifdef __IPHONE_8_0
         case UIInterfaceOrientationUnknown:
+#endif
             frame.origin.y += kGKAchievementMoveOffset + [UIApplication sharedApplication].statusBarFrame.size.height;
             break;
             
