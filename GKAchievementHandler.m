@@ -15,7 +15,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 #pragma mark -
 
-@interface GKAchievementHandler(private)
+@interface GKAchievementHandler ()
 
 - (void)displayNotification:(GKAchievementNotification *)notification;
 
@@ -23,7 +23,7 @@ static GKAchievementHandler *defaultHandler = nil;
 
 #pragma mark -
 
-@implementation GKAchievementHandler(private)
+@implementation GKAchievementHandler
 
 - (void)displayNotification:(GKAchievementNotification *)notification
 {
@@ -42,14 +42,6 @@ static GKAchievementHandler *defaultHandler = nil;
         [notification animateIn];
     }
 }
-
-@end
-
-#pragma mark -
-
-@implementation GKAchievementHandler
-
-#pragma mark -
 
 + (GKAchievementHandler *)defaultHandler
 {
@@ -134,7 +126,7 @@ static GKAchievementHandler *defaultHandler = nil;
     [_queue removeObjectAtIndex:0];
     if ([_queue count])
     {
-        [self displayNotification:(GKAchievementNotification *)[_queue objectAtIndex:0]];
+        [self displayNotification:(GKAchievementNotification *)_queue[0]];
     }
 }
 

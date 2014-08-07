@@ -84,9 +84,9 @@
 /** Description of achievement earned. */
 @property (nonatomic, retain) GKAchievementDescription *achievement;
 /** Optional custom achievement message. */
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, copy) NSString *message;
 /** Optional custom achievement title. */
-@property (nonatomic, retain) NSString *title;
+@property (nonatomic, copy) NSString *title;
 /** Stretchable background view. */
 @property (nonatomic, retain) UIImageView *background;
 /** Logo that is displayed on the left. */
@@ -96,7 +96,7 @@
 /** Text label used to display achievement description. */
 @property (nonatomic, retain) UILabel *detailLabel;
 /** Reference to nofification handler. */
-@property (nonatomic, retain) id<GKAchievementHandlerDelegate> handlerDelegate;
+@property (nonatomic, weak) id<GKAchievementHandlerDelegate> handlerDelegate;
 
 #pragma mark -
 

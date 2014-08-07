@@ -11,7 +11,7 @@
 
 #pragma mark -
 
-@interface GKAchievementNotification(private)
+@interface GKAchievementNotification ()
 
 - (void)animationInDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
 - (void)animationOutDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context;
@@ -25,7 +25,7 @@
 
 #pragma mark -
 
-@implementation GKAchievementNotification(private)
+@implementation GKAchievementNotification
 
 - (void)animationInDidStop:(NSString *)animationID finished:(NSNumber *)finished context:(void *)context
 {
@@ -89,12 +89,6 @@
             break;
     }
 }
-
-@end
-
-#pragma mark -
-
-@implementation GKAchievementNotification
 
 @synthesize achievement=_achievement;
 @synthesize background=_background;
@@ -242,7 +236,7 @@
 - (CGRect)startFrame
 {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    UIWindow *rootWindow = [[UIApplication sharedApplication].windows objectAtIndex:0];
+    UIWindow *rootWindow = [UIApplication sharedApplication].windows[0];
     CGRect frame = rootWindow.frame;
  
     switch (orientation) {
