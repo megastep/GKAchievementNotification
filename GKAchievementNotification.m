@@ -236,7 +236,7 @@
 - (CGRect)startFrame
 {
     UIInterfaceOrientation orientation = [UIApplication sharedApplication].statusBarOrientation;
-    UIWindow *rootWindow = [UIApplication sharedApplication].windows[0];
+    UIWindow *rootWindow = [UIApplication sharedApplication].keyWindow;
     CGRect frame = rootWindow.frame;
  
     switch (orientation) {
